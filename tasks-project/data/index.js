@@ -8,47 +8,25 @@ export const options = {
     "7": "Exit"
 }
 
+function createTask(id, title, description, status = 'pending') {
+    return {
+        id,
+        title,
+        description,
+        status,
+
+        complete() {
+            this.status = 'completed';
+        }
+    };
+}
+
 export const tasks = [
-    {
-        id: 1,
-        title: 'SQL',
-        description: 'Learn SQL for database management',
-        status: 'complete'
-    },
-    {
-        id: 2,
-        title: 'C#',
-        description: 'Learn C# for application development',
-        status: 'completed'
-    },
-    {
-        id: 3,
-        title: 'Git',
-        description: 'Learn Git for version control',
-        status: 'completed'
-    },
-    {
-        id: 4,
-        title: 'Azure',
-        description: 'Learn Azure for deployment and cloud services',
-        status: 'completed'
-    },
-    {
-        id: 5,
-        title: 'JavaScript',
-        description: 'Learn JavaScript for web development',
-        status: 'pending'
-    },
-    {
-        id: 6,
-        title: 'TypeScript',
-        description: 'Learn TypeScript for type safety in JavaScript',
-        status: 'pending'
-    },
-    {
-        id: 7,
-        title: 'React',
-        description: 'Learn React for building user interfaces',
-        status: 'pending'
-    }
-]
+    createTask(1, 'SQL', 'Learn SQL for database management', 'complete'),
+    createTask(2, 'C#', 'Learn C# for application development', 'completed'),
+    createTask(3, 'Git', 'Learn Git for version control', 'completed'),
+    createTask(4, 'Azure', 'Learn Azure for deployment and cloud services', 'completed'),
+    createTask(5, 'JavaScript', 'Learn JavaScript for web development', 'pending'),
+    createTask(6, 'TypeScript', 'Learn TypeScript for type safety in JavaScript', 'pending'),
+    createTask(7, 'React', 'Learn React for building user interfaces', 'pending')
+];
